@@ -3,8 +3,10 @@ lazy val root = (project in file(".")).
     name := "scala_school",
     version := "1.0",
     scalaVersion := "2.11.8",
+    initialCommands in (Test, console) := """ammonite.Main().run()""",
     libraryDependencies ++= Seq(
       "com.lihaoyi" %% "pprint" % "0.4.3",
+      "com.lihaoyi" % "ammonite" % "0.8.1" % "test" cross CrossVersion.full,
       "com.twitter" %% "finagle-core" % "6.39.0",
       "com.twitter" %% "finagle-http" % "6.39.0",
       "com.twitter" %% "finagle-memcached" % "6.39.0",
